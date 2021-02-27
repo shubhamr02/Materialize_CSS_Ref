@@ -1,0 +1,48 @@
+Grid
+    -Normal div takes up the 100% width of the parent div.
+    -Grid allows us to display the elements in grid like fashion.
+Row and Col
+    -Has 12 grids
+offset
+    -Adjust remaining width(sizes) of the screen.
+Vertical alignment
+    -Aligns the text vertically at the center of the div.
+
+
+    Hide/Show elements
+
+    .Hide                     -         Hidden for all Devices
+    .hide-on-small-only       -         Hidden for Mobile Only
+    .hide-on-med-only         -         Hidden for Tablet Only
+    .hide-on-med-and-down     -         Hidden for tablet and below
+    .hide-on-med-and-up       -         Hidden for tablet and Above
+    .hide-on-med-large-only   -         Hidden for desktop only
+    .show-on-small            -         Show for Mobile Only
+    .show-on-medium           -         Show for Tablet Only
+    .show-on-large            -         Show for Desktop Only
+    .show-on-medium-and-up    -         Show for Tablet and above
+    .show-on-medium-and-down  -         Show for Tablet and below
+
+hoverable
+    -Applies shadow effects on hoverable
+
+Responsive Image
+    -Adjust the sizes automatically to its device screen.
+
+
+Circular Image
+    -Image in circle shape.(Elipse shape for rectange)
+    -Perfect circle shape on square images.
+
+Buttons
+    -Can be implemented using "btn" class
+    Properties:
+    btn-small : Reduced the padding
+    btn-large : Increases the padding
+    Effects
+    Waves-effect -> generate waves on clicking the button.
+    waves-light  -> light waves on clicking the button.
+    waves-colors -> waves color on clicking the button.(E.g. red,green, yellow..)
+
+    Button color
+    

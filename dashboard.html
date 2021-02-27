@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Chart-->
+    <link rel="stylesheet" href="css/chart.css">
+    <link rel="stylesheet" href="css/chart_up1.css">
+    <title>Dashboard</title>
+    <style>
+        body {
+            background: #FCFCFC 0% 0% no-repeat padding-box;
+            margin-left: 10.5rem;
+            padding-left: 0.9rem;
+            padding: -1.5rem;
+            min-width: 768px;
+            padding: 5px;
+            opacity: 1;
+        }
+
+        @media only screen and (min-width: 993px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+        .row .col {
+            min-height: 60px;
+        }
+
+        .row .col.l3 {
+            border-right: 1px solid lightgrey;
+        }
+
+        .col .row {
+            margin-left: -.75rem;
+            margin-right: 1.25rem;
+        }
+
+        .collection {
+            margin: .5rem 0 1rem 0;
+            border: 1px solid #ffffff;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .collection .collection-item {
+            border-bottom: 1px solid #ffffff;
+            margin-bottom: 10px;
+            box-shadow: 0px 3px 26px #00000017;
+            border-radius: 1px;
+        }
+
+        .sidenav {
+            max-width: 150px;
+            box-shadow: 0px 3px 26px #00000017;
+            opacity: 1;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            padding: 2rem;
+            display: inline-block;
+        }
+
+
+        .sidenav li:hover>a>i {
+            background: white !important;
+            transform: scale(1.1, 1.1);
+            text-shadow: 10px 10px 5px lightgrey transparent;
+            box-shadow: none !important;
+            color: blue !important;
+            font: bold;
+        }
+
+        a {
+            margin: 10px;
+        }
+
+        a:hover {
+            background: none;
+            transform: scale(1.1, 1.1);
+            color: blue !important;
+            text-shadow: 10px 10px 5px lightgrey transparent;
+        }
+
+        .side-icons {
+            margin-top: 1.56rem;
+            font-size: 70px;
+        }
+
+        .side-icons:hover {
+            color: blue;
+        }
+
+        .side-title {
+            text-align: center;
+        }
+
+        .button-1 {
+            margin-top: 2.5rem;
+        }
+
+        h5 {
+            font: normal normal bold 19px/26px Inter;
+            letter-spacing: 2.91px;
+
+        }
+
+        h3,
+        h4 {
+            font: normal normal 30px Inter;
+            margin: none;
+        }
+
+        p {
+            font: normal normal medium 16px/21px Inter;
+            color: #495172;
+            text-shadow: 0px 3px 26px #0000001C;
+            opacity: 1;
+        }
+
+        .divider {
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            bottom: 10%;
+            border-left: 1px solid rgb(92, 92, 92);
+        }
+
+        i {
+            margin: 2px;
+            white-space: pre-wrap;
+        }
+
+        img {
+            /*top: 88px;*/
+            left: 1578px;
+            width: 68px;
+            height: 68px;
+            box-shadow: 0px 3px 26px #00000029;
+            opacity: 1;
+        }
+
+        a {
+            font-size: small;
+        }
+
+        span {
+            display: inline;
+            position: relative;
+        }
+
+        .acc {
+            border-right: 1px grey;
+            color: #8990AD;
+            text-indent: 17px;
+            line-height: 0px;
+        }
+
+        .welcome-user {
+            margin-top: -2px;
+            padding: 11px;
+        }
+
+        p {
+            padding: 3px;
+        }
+
+        /*
+        .btc {
+            font-size: 18px;
+            color: blue;
+            background: white;
+            display: inline;
+            padding: 6px;
+            background-color: #b0c3f8;
+        }
+
+        .btn-floating:hover {
+            background-color: none;
+        }*/
+
+        .btn {
+            display: inline;
+            border-radius: 25px;
+            background-color: rgb(82 219 95);
+            font: bold;
+            width: 45% auto;
+        }
+
+        .arr-up {
+            margin-left: 19px;
+            color: rgb(87, 236, 87);
+            font-size: 25px;
+        }
+
+        .arr-down {
+            margin-left: -9px;
+            color: rgb(207, 78, 85);
+            font-size: smaller;
+        }
+
+
+        .card {
+            min-height: 100px;
+        }
+
+        .dashboard,
+        .chart,
+        .attach_money,
+        .show_chart {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .signout {
+            margin-top: 200px;
+        }
+
+        i.circle {
+            font-size: 15px;
+            line-height: 30px;
+            width: 30px;
+            color: rgb(59, 85, 230);
+            background-color: rgb(205 214 255);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Sidenav-->
+    <ul id="sidenav-1" class="sidenav sidenav-fixed hide-on-med-and-down valign">
+        <li class="dashboard">
+            <a href="#" class="side-link">
+                <i class="material-icons valign side-icons" id="hover-icons">dashboard</i><br>
+                <h6>Dashboard</h6>
+            </a>
+        </li><br>
+        <li class="chart"><a href="#" target="_blank" id="hover-icons">
+                <i class="material-icons valign side-icons grey-text lighten-5">insert_chart</i><br>
+                <h6>Analytics</h6>
+            </a></li><br>
+        <li class="attach_money">
+            <a href="#" target="_blank">
+                <i class="material-icons side-icons grey-text lighten-5">attach_money</i><br>
+                <h6>Trading</h6>
+            </a>
+        </li><br>
+        <li class="show_chart"><a href="#" target="_blank">
+                <i class="material-icons side-icons grey-text lighten-5">show_chart</i><br>
+                <h6>Notification</h6>
+            </a></li><br>
+        <li class="signout"><a href="#" target="_blank">
+                <i class="fas fa-sign-out-alt side-icons pin-bottom grey-text lighten-5 hover-icons"></i><br>
+                <h6>Logout</h6>
+            </a></li><br>
+    </ul>
+
+    <div class="container">
+        <!--User-->
+        <div class="row">
+            <div class="col s12 l12">
+                <h3 class="left heading-1">Dashboard</h3>
+                <ul class="valign-wrapper right">
+                    <li>
+                        <div class="btn green right" style="margin-right: 19px;">+Add Unit
+                        </div>
+                    </li>
+                    <li><img src="./img/user.jpg" alt="" class="circle img-user"
+                            style="margin-right: 19px; height: 55px; width: 55px;"></li>
+                    <li>
+                        <p class="grey-text darken-4" style="margin-right: 19px; color: #8990AD;">Andrew Jhonson</p>
+                    </li>
+                </ul>
+            </div>
+            <p class="grey-text lighten-2 welcome-user">Welcome back, Andrew</p>
+        </div>
+        <!--Balance Information-->
+        <div class="row">
+            <section>
+                <div class="col s12 l3">
+                    <p class="grey-text lighten-2 text-accent-3 acc">BALANCE</p>
+                    <span>
+                        <p class="flow-text black-text darken-2 acc" style="margin-top: 42px;">
+                            $5900.0
+                        </p>
+                    </span>
+                </div>
+                <div class="col s12 l3">
+                    <p class="grey-text lighten-2 text-accent-3 acc">PROFITS</p>
+                    <ul class="valign-wrapper">
+                        <li>
+                            <p class="flow-text black-text darken-2 acc" style="margin-top: 25px;">
+                                $5900.0
+                                <!--<i class="fas fa-arrow-up green-text"></i>-->
+                                <!---
+                                                    <i class="material-icons arr-up">arrow_drop_up</i>
+                                                    <span class="green-text">
+                                                        <span>
+                                                            <p class="green-text" style="font: bold 10px;">+51.2%</p>
+                                                        </span>
+                                                    </span>-->
+                            </p>
+                        </li>
+                        <li><i class="material-icons green-text arr-up">arrow_drop_up</i></li>
+                        <li>
+                            <p class="green-text lighten-2">+51.2%</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 l3">
+                    <p class="grey-text lighten-2 text-accent-3 acc">LOSSES</p>
+                    <ul class="valign-wrapper">
+                        <li>
+                            <p class="flow-text black-text darken-2 acc">
+                                $450.0
+                            </p>
+                        </li>
+                        <li>
+                            <i class="material-icons red-text">arrow_drop_down</i>
+                        </li>
+                        <li>
+                            <p class="red-text" style="font: bold 10px;">+51.2%</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 l3">
+                    <p class="grey-text lighten-2 text-accent-3 acc">CURRENCIES</p>
+                    <p class="flow-text darken-2">
+                        <i class="fab fa-btc circle"></i>
+                        <i class="fas fa-dollar-sign circle"></i>
+                        <i class="fas fa-euro-sign circle"></i>
+                        <i class="fas fa-yen-sign circle"></i>
+                    </p>
+                </div>
+            </section>
+        </div>
+        <!--Countries Markey Performance-->
+        <div class="row">
+            <div class="col s12 white z-depth-2">
+                <section>
+                    <div class="row">
+                        <div class="col s12 l2">
+                            <h6 class="grey-text lighten-3 center">Italy</h6>
+                            <h4 class="darken-2 center">475 <i
+                                    class="material-icons green-text accent-3">arrow_drop_up</i>
+                            </h4>
+                            <div id="chartArea" class="center"></div>
+                        </div>
+                        <div class="col s12 l2 m2">
+                            <h6 class="grey-text lighten-3 center">United States</h6>
+                            <h4 class="darken-2 center">431 <i
+                                    class="material-icons green-text accent-3">arrow_drop_up</i>
+                            </h4>
+                            <div id="chartArea" class="center"><svg width="420" height="300">
+                                    <g transform="translate(50,20)">
+                                        <path class="line"
+                                            d="M340.27777777777777,203.55828220858902C333.1424140338967,203.48445112296096,317.5927944036658,192.64177435729277,311.1111111111111,183.58895705521476C304.5564817644953,174.4342576847732,305.48644145485383,157.5842002391147,301.3888888888889,148.77300613496934C298.55730896236776,142.6841030758075,294.416987084035,141.03056272016616,291.6666666666667,134.5092024539878C287.03522077771595,123.52745392591676,285.0746207297411,103.1559777976034,281.94444444444446,86.53374233128847C278.5756388885756,68.64430924954277,278.7022887149098,31.87994980142863,272.22222222222223,30.67484662576686C265.7407406634795,29.469480289133095,250.1830625373764,79.3081734266009,243.05555555555554,79.32515337423318C238.95671961944007,79.33491808154614,237.2326306342234,64.71896455198743,233.33333333333331,63.282208588957026C230.45214597803405,62.220590868146374,226.35816603663878,62.943063531406196,223.6111111111111,66.50306748466258C212.98902816501243,80.26859395030615,218.42544070724492,219.0782468996847,213.8888888888889,219.32515337423314C211.12806610264363,219.47541397926946,211.20104092244657,179.6212969398416,204.16666666666669,163.45092024539886C197.6751477870088,148.52844074881747,181.6078271115298,137.11939563955178,175,124.95398773006139C169.91474778505892,115.59173195774359,169.73480055899643,103.22919233631562,165.27777777777777,98.05214723926389C162.50706815608635,94.83383551719331,158.85464805751747,94.25612760714013,155.55555555555554,92.79141104294477C152.36924516676063,91.37676698481053,148.80891501025266,91.45199811758664,145.83333333333334,89.35582822085888C142.19648507137867,86.79382432602083,141.24050843834834,79.53899540899714,136.11111111111111,77.40797546012274C127.9404019930216,74.01343551394994,105.32464309276618,76.48285116927688,97.22222222222223,81.31901840490812C91.8237634746715,84.54124664199293,91.06264750736207,95.13866068563995,87.5,95.69018404907992C84.48916890003242,96.15628227843668,80.73830745753429,87.45711885772634,77.77777777777777,88.00613496932513C74.10601994057663,88.68704495117619,72.65653928510623,98.46724894617509,68.05555555555556,104.40184049079762C61.28171985927682,113.13909113343873,45.68506396084149,134.45922171444386,38.888888888888886,133.6656441717793C34.333545914553916,133.13372469570723,32.57544683677106,122.64683972608645,29.166666666666664,117.85276073619636C26.065046226901213,113.49066853814246,23.02004415440253,106.72412294542731,19.444444444444443,105.95092024539885C16.440110782680765,105.30125051514561,12.737925183047752,108.40447797493584,9.722222222222221,110.7668711656442">
+                                        </path>
+                                    </g>
+                                </svg></div>
+                        </div>
+                        <div class="col s12 l2">
+                            <h6 class="grey-text lighten-3 center">Canada</h6>
+                            <h4 class="darken-2 center">174 <i
+                                    class="material-icons red-text accent-3">arrow_drop_down</i>
+                            </h4>
+                            <div id="chartArea" class="center"><svg width="420" height="300">
+                                    <g transform="translate(50,20)">
+                                        <path class="line" id="line-down"
+                                            d="M340.27777777777777,203.55828220858902C333.1424140338967,203.48445112296096,317.5927944036658,192.64177435729277,311.1111111111111,183.58895705521476C304.5564817644953,174.4342576847732,305.48644145485383,157.5842002391147,301.3888888888889,148.77300613496934C298.55730896236776,142.6841030758075,294.416987084035,141.03056272016616,291.6666666666667,134.5092024539878C287.03522077771595,123.52745392591676,285.0746207297411,103.1559777976034,281.94444444444446,86.53374233128847C278.5756388885756,68.64430924954277,278.7022887149098,31.87994980142863,272.22222222222223,30.67484662576686C265.7407406634795,29.469480289133095,250.1830625373764,79.3081734266009,243.05555555555554,79.32515337423318C238.95671961944007,79.33491808154614,237.2326306342234,64.71896455198743,233.33333333333331,63.282208588957026C230.45214597803405,62.220590868146374,226.35816603663878,62.943063531406196,223.6111111111111,66.50306748466258C212.98902816501243,80.26859395030615,218.42544070724492,219.0782468996847,213.8888888888889,219.32515337423314C211.12806610264363,219.47541397926946,211.20104092244657,179.6212969398416,204.16666666666669,163.45092024539886C197.6751477870088,148.52844074881747,181.6078271115298,137.11939563955178,175,124.95398773006139C169.91474778505892,115.59173195774359,169.73480055899643,103.22919233631562,165.27777777777777,98.05214723926389C162.50706815608635,94.83383551719331,158.85464805751747,94.25612760714013,155.55555555555554,92.79141104294477C152.36924516676063,91.37676698481053,148.80891501025266,91.45199811758664,145.83333333333334,89.35582822085888C142.19648507137867,86.79382432602083,141.24050843834834,79.53899540899714,136.11111111111111,77.40797546012274C127.9404019930216,74.01343551394994,105.32464309276618,76.48285116927688,97.22222222222223,81.31901840490812C91.8237634746715,84.54124664199293,91.06264750736207,95.13866068563995,87.5,95.69018404907992C84.48916890003242,96.15628227843668,80.73830745753429,87.45711885772634,77.77777777777777,88.00613496932513C74.10601994057663,88.68704495117619,72.65653928510623,98.46724894617509,68.05555555555556,104.40184049079762C61.28171985927682,113.13909113343873,45.68506396084149,134.45922171444386,38.888888888888886,133.6656441717793C34.333545914553916,133.13372469570723,32.57544683677106,122.64683972608645,29.166666666666664,117.85276073619636C26.065046226901213,113.49066853814246,23.02004415440253,106.72412294542731,19.444444444444443,105.95092024539885C16.440110782680765,105.30125051514561,12.737925183047752,108.40447797493584,9.722222222222221,110.7668711656442">
+                                        </path>
+                                    </g>
+                                </svg></div>
+                        </div>
+                        <div class="col s12 l2">
+                            <h6 class="grey-text lighten-3 center">Japan</h6>
+                            <h4 class="darken-2 center">475 <i
+                                    class="material-icons green-text accent-3">arrow_drop_up</i>
+                            </h4>
+                            <div id="chartArea" class="center"><svg width="420" height="300">
+                                    <g transform="translate(50,20)">
+                                        <path class="line"
+                                            d="M340.27777777777777,203.55828220858902C333.1424140338967,203.48445112296096,317.5927944036658,192.64177435729277,311.1111111111111,183.58895705521476C304.5564817644953,174.4342576847732,305.48644145485383,157.5842002391147,301.3888888888889,148.77300613496934C298.55730896236776,142.6841030758075,294.416987084035,141.03056272016616,291.6666666666667,134.5092024539878C287.03522077771595,123.52745392591676,285.0746207297411,103.1559777976034,281.94444444444446,86.53374233128847C278.5756388885756,68.64430924954277,278.7022887149098,31.87994980142863,272.22222222222223,30.67484662576686C265.7407406634795,29.469480289133095,250.1830625373764,79.3081734266009,243.05555555555554,79.32515337423318C238.95671961944007,79.33491808154614,237.2326306342234,64.71896455198743,233.33333333333331,63.282208588957026C230.45214597803405,62.220590868146374,226.35816603663878,62.943063531406196,223.6111111111111,66.50306748466258C212.98902816501243,80.26859395030615,218.42544070724492,219.0782468996847,213.8888888888889,219.32515337423314C211.12806610264363,219.47541397926946,211.20104092244657,179.6212969398416,204.16666666666669,163.45092024539886C197.6751477870088,148.52844074881747,181.6078271115298,137.11939563955178,175,124.95398773006139C169.91474778505892,115.59173195774359,169.73480055899643,103.22919233631562,165.27777777777777,98.05214723926389C162.50706815608635,94.83383551719331,158.85464805751747,94.25612760714013,155.55555555555554,92.79141104294477C152.36924516676063,91.37676698481053,148.80891501025266,91.45199811758664,145.83333333333334,89.35582822085888C142.19648507137867,86.79382432602083,141.24050843834834,79.53899540899714,136.11111111111111,77.40797546012274C127.9404019930216,74.01343551394994,105.32464309276618,76.48285116927688,97.22222222222223,81.31901840490812C91.8237634746715,84.54124664199293,91.06264750736207,95.13866068563995,87.5,95.69018404907992C84.48916890003242,96.15628227843668,80.73830745753429,87.45711885772634,77.77777777777777,88.00613496932513C74.10601994057663,88.68704495117619,72.65653928510623,98.46724894617509,68.05555555555556,104.40184049079762C61.28171985927682,113.13909113343873,45.68506396084149,134.45922171444386,38.888888888888886,133.6656441717793C34.333545914553916,133.13372469570723,32.57544683677106,122.64683972608645,29.166666666666664,117.85276073619636C26.065046226901213,113.49066853814246,23.02004415440253,106.72412294542731,19.444444444444443,105.95092024539885C16.440110782680765,105.30125051514561,12.737925183047752,108.40447797493584,9.722222222222221,110.7668711656442">
+                                        </path>
+                                    </g>
+                                </svg></div>
+                        </div>
+                        <div class="col s12 l2">
+                            <h6 class="grey-text lighten-3 center">Spain</h6>
+                            <h4 class="darken-2 center">475 <i
+                                    class="material-icons green-text accent-3">arrow_drop_up</i>
+                            </h4>
+                            <div id="chartArea" class="center"><svg width="420" height="300">
+                                    <g transform="translate(50,20)">
+                                        <path class="line"
+                                            d="M340.27777777777777,203.55828220858902C333.1424140338967,203.48445112296096,317.5927944036658,192.64177435729277,311.1111111111111,183.58895705521476C304.5564817644953,174.4342576847732,305.48644145485383,157.5842002391147,301.3888888888889,148.77300613496934C298.55730896236776,142.6841030758075,294.416987084035,141.03056272016616,291.6666666666667,134.5092024539878C287.03522077771595,123.52745392591676,285.0746207297411,103.1559777976034,281.94444444444446,86.53374233128847C278.5756388885756,68.64430924954277,278.7022887149098,31.87994980142863,272.22222222222223,30.67484662576686C265.7407406634795,29.469480289133095,250.1830625373764,79.3081734266009,243.05555555555554,79.32515337423318C238.95671961944007,79.33491808154614,237.2326306342234,64.71896455198743,233.33333333333331,63.282208588957026C230.45214597803405,62.220590868146374,226.35816603663878,62.943063531406196,223.6111111111111,66.50306748466258C212.98902816501243,80.26859395030615,218.42544070724492,219.0782468996847,213.8888888888889,219.32515337423314C211.12806610264363,219.47541397926946,211.20104092244657,179.6212969398416,204.16666666666669,163.45092024539886C197.6751477870088,148.52844074881747,181.6078271115298,137.11939563955178,175,124.95398773006139C169.91474778505892,115.59173195774359,169.73480055899643,103.22919233631562,165.27777777777777,98.05214723926389C162.50706815608635,94.83383551719331,158.85464805751747,94.25612760714013,155.55555555555554,92.79141104294477C152.36924516676063,91.37676698481053,148.80891501025266,91.45199811758664,145.83333333333334,89.35582822085888C142.19648507137867,86.79382432602083,141.24050843834834,79.53899540899714,136.11111111111111,77.40797546012274C127.9404019930216,74.01343551394994,105.32464309276618,76.48285116927688,97.22222222222223,81.31901840490812C91.8237634746715,84.54124664199293,91.06264750736207,95.13866068563995,87.5,95.69018404907992C84.48916890003242,96.15628227843668,80.73830745753429,87.45711885772634,77.77777777777777,88.00613496932513C74.10601994057663,88.68704495117619,72.65653928510623,98.46724894617509,68.05555555555556,104.40184049079762C61.28171985927682,113.13909113343873,45.68506396084149,134.45922171444386,38.888888888888886,133.6656441717793C34.333545914553916,133.13372469570723,32.57544683677106,122.64683972608645,29.166666666666664,117.85276073619636C26.065046226901213,113.49066853814246,23.02004415440253,106.72412294542731,19.444444444444443,105.95092024539885C16.440110782680765,105.30125051514561,12.737925183047752,108.40447797493584,9.722222222222221,110.7668711656442">
+                                        </path>
+                                    </g>
+                                </svg></div>
+                        </div>
+                        <div class="col s12 l2">
+                            <h6 class="grey-text lighten-3 center">South Africa</h6>
+                            <h4 class="darken-2 center">471 <i
+                                    class="material-icons red-text accent-3">arrow_drop_down</i>
+                            </h4>
+                            <div id="chartArea" class="center"><svg width="420" height="300">
+                                    <g transform="translate(50,20)">
+                                        <path class="line" id="line-down"
+                                            d="M340.27777777777777,203.55828220858902C333.1424140338967,203.48445112296096,317.5927944036658,192.64177435729277,311.1111111111111,183.58895705521476C304.5564817644953,174.4342576847732,305.48644145485383,157.5842002391147,301.3888888888889,148.77300613496934C298.55730896236776,142.6841030758075,294.416987084035,141.03056272016616,291.6666666666667,134.5092024539878C287.03522077771595,123.52745392591676,285.0746207297411,103.1559777976034,281.94444444444446,86.53374233128847C278.5756388885756,68.64430924954277,278.7022887149098,31.87994980142863,272.22222222222223,30.67484662576686C265.7407406634795,29.469480289133095,250.1830625373764,79.3081734266009,243.05555555555554,79.32515337423318C238.95671961944007,79.33491808154614,237.2326306342234,64.71896455198743,233.33333333333331,63.282208588957026C230.45214597803405,62.220590868146374,226.35816603663878,62.943063531406196,223.6111111111111,66.50306748466258C212.98902816501243,80.26859395030615,218.42544070724492,219.0782468996847,213.8888888888889,219.32515337423314C211.12806610264363,219.47541397926946,211.20104092244657,179.6212969398416,204.16666666666669,163.45092024539886C197.6751477870088,148.52844074881747,181.6078271115298,137.11939563955178,175,124.95398773006139C169.91474778505892,115.59173195774359,169.73480055899643,103.22919233631562,165.27777777777777,98.05214723926389C162.50706815608635,94.83383551719331,158.85464805751747,94.25612760714013,155.55555555555554,92.79141104294477C152.36924516676063,91.37676698481053,148.80891501025266,91.45199811758664,145.83333333333334,89.35582822085888C142.19648507137867,86.79382432602083,141.24050843834834,79.53899540899714,136.11111111111111,77.40797546012274C127.9404019930216,74.01343551394994,105.32464309276618,76.48285116927688,97.22222222222223,81.31901840490812C91.8237634746715,84.54124664199293,91.06264750736207,95.13866068563995,87.5,95.69018404907992C84.48916890003242,96.15628227843668,80.73830745753429,87.45711885772634,77.77777777777777,88.00613496932513C74.10601994057663,88.68704495117619,72.65653928510623,98.46724894617509,68.05555555555556,104.40184049079762C61.28171985927682,113.13909113343873,45.68506396084149,134.45922171444386,38.888888888888886,133.6656441717793C34.333545914553916,133.13372469570723,32.57544683677106,122.64683972608645,29.166666666666664,117.85276073619636C26.065046226901213,113.49066853814246,23.02004415440253,106.72412294542731,19.444444444444443,105.95092024539885C16.440110782680765,105.30125051514561,12.737925183047752,108.40447797493584,9.722222222222221,110.7668711656442">
+                                        </path>
+                                    </g>
+                                </svg></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!--Comparison-->
+        <div class="row">
+            <div class="col s12 l6 m6">
+                <span>
+                    <h3>Team Members <span class="right"><a href="#">View all</a></span></h3>
+                </span>
+                <!-- <div class="col s12">
+                    <div class="card" style="margin: 2px;">
+                        <div class="card-content">
+                            <div class="col s2">
+                                <img src="./img/man.jpg" alt="" class="circle responsive-img">
+                            </div>
+                            <p class="indigo-text darken-3 bold">Andrew <span class="btn right">Top
+                                    Trader</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card" style="margin: 2px;">
+                        <div class="card-content">
+                            <div class="col s2">
+                                <img src="./img/man.jpg" alt="" class="circle responsive-img">
+                            </div>
+                            <p class="indigo-text darken-3 bold">Anna Atkinson <span class="btn right">Manager</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card" style="margin: 2px;">
+                        <div class="card-content">
+                            <div class="col s2">
+                                <img src="./img/man.jpg" alt="" class="circle responsive-img">
+                            </div>
+                            <p class="indigo-text darken-3 bold">Mark Atkinson <span class="btn right">Top
+                                    Trader</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card" style="margin: 2px;">
+                        <div class="card-content">
+                            <div class="col s2">
+                                <img src="./img/man.jpg" alt="" class="circle responsive-img">
+                            </div>
+                            <p class="indigo-text darken-3 bold">Johanna Tairons <span class="btn right">Manager</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>-->
+
+                <ul class="collection" style="margin: 5px;">
+                    <li class="collection-item avatar">
+                        <img src="./img/usr1.jpg" alt="" class="circle" style="margin-top: 10px;">
+                        <div style="margin-top: 20px;">Andrew Johnston
+                            <a href="#!" class="secondary-content">
+                                <span class="new badge" data-badge-caption="Top Trader"
+                                    style="border-radius: 12px; background-color: rgb(14, 207, 143);"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="./img/usr2.jpg" alt="" class="circle" style="margin-top: 10px;">
+                        <div style="margin-top: 20px;">Anna Atkinsons
+                            <a href="#!" class="secondary-content">
+                                <span class="new badge" data-badge-caption="Manager"
+                                    style="border-radius: 12px; background-color: rgb(8, 185, 230);"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="collection-item avatar">
+                        <img src="./img/usr3.jpg" alt="" class="circle" style="margin-top: 10px;">
+                        <div style="margin-top: 20px;">Mark Atkinsons
+                            <a href="#!" class="secondary-content">
+                                <span class="new badge" data-badge-caption="Top Trader"
+                                    style="border-radius: 12px; background-color: rgb(14, 207, 143);"></span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class=" collection-item avatar">
+                        <img src="./img/usr3.jpg" alt="" class="circle" style="margin-top: 10px;">
+                        <div style="margin-top: 20px;">Johanna Tairons
+                            <a href="#!" class="secondary-content">
+                                <span class="new badge" data-badge-caption="Manager"
+                                    style="border-radius: 12px; background-color: rgb(8, 185, 230);"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col s12 l6 m6">
+                <span>
+                    <h3>Comparison <span class="right"><a href="#">View all</a></span></h3>
+                </span>
+                <div class="col s12">
+                    <div class="card" style="padding: auto; height: fit-content">
+                        <div class="card-content">
+                            <div class="col s2">
+                                <img src="./img/usa.png" alt="" class="responsive-img">
+                            </div>
+                            <p class="indigo-text darken-3">United States</p>
+                            <blackquote class="grey-text darken-3 right">90%</blackquote>
+                            <div class="progress push-s12 l7" style="margin: 12px;">
+                                <div class="determinate" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="col s2">
+                                <img src="./img/italy.png" alt="" class="responsive-img">
+                            </div>
+                            <p class="indigo-text darken-3 bold push-l1">Italy</p>
+                            <blackquote class="grey-text darken-3 right">70%</blackquote>
+                            <div class="progress" style="margin: 12px;">
+                                <div class="determinate" style="width: 70%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="col s2">
+                                <img src="./img/spain.png" alt="" class="responsive-img">
+                            </div>
+                            <p class="indigo-text darken-3 bold push-l1">Spain</p>
+                            <blackquote class="grey-text darken-3 right">13%</blackquote>
+                            <div class="progress" style="margin: 12px;">
+                                <div class=" determinate" style="width: 13%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Chart Js File-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="script/chart.js"></script>
+</body>
+
+</html>
